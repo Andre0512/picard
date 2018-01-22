@@ -42,7 +42,7 @@ def main():
 	print("Version: "+port.get_elm_version())
 
 
-	with open(args.output, 'w') as csvfile:
+	with open("/home/pi/obdstick/" + time.strftime("%Y-%m-%d-%H-%M") +".csv", 'w') as csvfile:
 		header = list(args.sensors)
 		header.insert(0,'time')
 		writer = csv.DictWriter(csvfile, fieldnames=header)
@@ -56,7 +56,7 @@ def main():
 				val = port.sensor(sensor)[1]
 				print((sensor,val))
 				dict[sensor] = val
-			dict['time'] = time.time()-starttime
+			dict['time'] = round(time.time()-starttime, 1)
 			writer.writerow(dict)
 			length = 1.0 - (time.time() - begin)
 			if length > 0:

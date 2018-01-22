@@ -1,7 +1,6 @@
 [submodule "obdython"]
 	path = obdython
-	url = git://alt.souvik.me/obdython.git
-	url = https://github.com/souvik1997/obdython.git
+	url = https://github.com/Andre0512/obdython.git
 	branch = souvik
 [submodule "server/picard/static/bootstrap"]
 	path = server/picard/static/bootstrap
